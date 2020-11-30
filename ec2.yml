@@ -72,7 +72,7 @@
         lineinfile:
           dest: /home/matt/Desktop/AWS_Ansible/inventory
           regexp: "{{ item.public_dns_name }}"
-          line: "{{ item.public_dns_name }} ansible_user: centos"
+          line: "{{ item.public_dns_name }} ansible_user=centos"
           insertafter: "[webserver]"
           state: present
         with_items: "{{ ec2.instances }}"
