@@ -1,0 +1,44 @@
+---
+
+- name: Deploy test app from Git
+  connection: ssh
+  gather_facts: false
+  hosts: webserver
+  become_user: root
+  vars:
+    repo_folder: /home/matt/ansible/repos/
+    live_folder: /home/matt/production/
+    repo_name: mattya802/Ansible
+
+  tasks:
+
+    - name: Block
+      block:
+        - name: Correct SSH deploy key permissions
+          file: dest=/home/matt/.ssh/github mode=0600
+
+        - name: Connect to git
+          git:
+            repo: ssh://git@github.com/{{ repo_name }}.git
+            dest: "{{ repo_folder }}"
+            key_file: /home/matt/.ssh/github
+            accept_hostkey: yes
+            force: yes
+            update: yes
+
+        - name: Install dependencies
+          yarn:
+            path: "{{ repo_folder }}"
+
+#        - name: Build project
+#          command: yarn run dev
+#          args:
+#            chdir: "{{ repo_folder }}"
+
+        - name: Copy build to live directory
+          command: cp AWS_Create_EC2.yml {{ live_folder }}
+          args:
+            chdir: "{{ repo_folder }}"
+
+
+      tags: always

@@ -1,0 +1,11 @@
+[host]
+localhost
+
+[host:vars]
+ansible_connection=local
+
+[webserver]
+ec2-3-139-97-246.us-east-2.compute.amazonaws.com
+
+[webserver:vars]
+ansible_user: centos

@@ -1,0 +1,16 @@
+webservers:
+  hosts:
+      server1:
+        ansible_connection: local
+        ansible_host: localhost
+#        ansible_user: matt
+#        ansible_password: remote_host_password
+
+#windows:
+#  hosts:
+#      server2:
+#        ansible_connection: winrm
+#        ansible_host: 192.168.1.108
+#        ansible_user: Matt
+#        ansible_password: less.work.want
+#        ansible_winrm_server_cert_validation: ignore
