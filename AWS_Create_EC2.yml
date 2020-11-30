@@ -78,6 +78,7 @@
           #   Name: App
           
       - name: Add newly created host to inventory
+      - name: Add newly created host to inventory
         lineinfile:
           dest: /home/matt/Desktop/AWS_Ansible/inventory
 
