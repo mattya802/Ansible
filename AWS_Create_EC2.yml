@@ -76,5 +76,9 @@
           #   Name: App
           # instance_tags:
           #   Name: App
+          
+      - name: Add newly created host to inventory
+        lineinfile:
+          dest: /home/matt/Desktop/AWS_Ansible/inventory
 
       tags: ['never', 'create_ec2']
