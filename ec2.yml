@@ -7,8 +7,8 @@
     image: ami-000e7ce4dd68e7a11
     id: "webserver2"
     sec_group: "{{ id }}-sec"
-    ec2_access: AKIATV7ONTSDGWSEX65O
-    ec2_secret: 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
+    ec2_access: 
+    ec2_secret: 
 
   tasks:
 
