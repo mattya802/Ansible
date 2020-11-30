@@ -71,10 +71,5 @@
           region: "{{ region }}"
           wait: true
           count: 1
-          # exact_count: 2
-          # count_tag:
-          #   Name: App
-          # instance_tags:
-          #   Name: App
-
+          
       tags: ['never', 'create_ec2']
