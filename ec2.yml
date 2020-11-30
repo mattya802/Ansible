@@ -65,7 +65,7 @@
           image: "{{ image }}"
           instance_type: t2.micro
           wait: true
-          count: 1
+          count: 2
         register: ec2
 
       - name: Add newly created host to inventory
