@@ -1,0 +1,9 @@
+{
+  "name": "AWS_Ansible",
+  "version": "1.0.0",
+  "description": "Ansible Project getting code from Git",
+  "main": "index.js",
+  "repository": "https://github.com/mattya802/Ansible.git",
+  "author": "Matt",
+  "license": "MIT"
+}

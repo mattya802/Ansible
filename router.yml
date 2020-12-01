@@ -1,0 +1,10 @@
+---
+- name: Networking Getting started
+  gather_facts: false
+  hosts: linux
+  tasks:
+
+
+    - name: Display the config
+      debug:
+        msg: "The hostname is test and the OS is test"
